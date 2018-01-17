@@ -1,0 +1,297 @@
+<!--i am not the author-->
+<html>
+    <head>
+        <style>
+            /*basic reset */
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Page settings */
+            html {
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            body {
+                text-align: center;
+                display: table;
+                background: black;
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+
+            canvas {display:block;}
+            
+            #author {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                color : #0F0;
+                z-index : 1;
+                box-sizing: border-box;
+                vertical-align: middle;
+            }
+        
+            span {
+                font-family: monospace;
+                font-size: 1.5em;
+            }
+            span:after {
+				
+				<!--color:red;-->
+				text-align:center;
+                content:"CSE PUST 2014-2015";
+                opacity: 0;
+                animation: cursor 1s infinite;
+            }
+            @keyframes cursor {
+                0% {
+                    opacity: 0;
+                }
+                40% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+			
+	
+			
+			
+			.stage {
+    margin: 100px 50px 50px;
+}
+
+  @-webkit-keyframes spincube {
+    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { -webkit-transform: rotateY(-90deg);                           }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) r50pxotateZ(90deg);           }
+    66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+  }
+
+  @keyframes spincube {
+    from,to {
+      -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      -moz-transform: rotateY(-90deg);
+      -ms-transform: rotateY(-90deg);
+      transform: rotateY(-90deg);
+    }
+    33% {
+      -moz-transform: rotateY(-90deg) rotateZ(90deg);
+      -ms-transform: rotateY(-90deg) rotateZ(90deg);
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      -moz-transform: rotateY(-180deg) rotateZ(90deg);
+      -ms-transform: rotateY(-180deg) rotateZ(90deg);
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      -moz-transform: rotateY(-270deg) rotateX(90deg);
+      -ms-transform: rotateY(-270deg) rotateX(90deg);
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      -moz-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+    }
+  }
+
+  .cubespinner {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 60px 60px 0;
+    -moz-transform-origin: 60px 60px 0;
+    -ms-transform-origin: 60px 60px 0;
+    transform-origin: 60px 60px 0;
+  }
+
+  .cubespinner div {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+   
+    line-height:200px;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .cubespinner .face1 {
+    color: CadetBlue;
+    -webkit-transform: translateZ(60px);
+    -moz-transform: translateZ(60px);
+    -ms-transform: translateZ(60px);
+    transform: translateZ(60px);
+  }
+  .cubespinner .face2 {
+    color: ForestGreen;
+    -webkit-transform: rotateY(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(60px);
+  }
+  .cubespinner .face3 {
+    color: blue;
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+  }
+  .cubespinner .face4 {
+    color: orange;
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner .face5 {
+    color: red;
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner .face6 {
+    color: DarkSlateGray;
+    -webkit-transform: rotateX(-90deg) translateZ(60px);
+    -moz-transform: rotateX(-90deg) translateZ(60px);
+    -ms-transform: rotateX(-90deg) translateZ(60px);
+    transform: rotateX(-90deg) translateZ(60px);
+  }	
+			
+		
+     ul{list-style-type:none;margin-top:100px;margin-left:560px;padding:0;}		
+        
+        </style>
+    </head>
+    <body>
+
+	
+	<h1 style="color:white;">WELCOME TO OUT WEBSITE</h1>
+    
+        <canvas id="c"></canvas>
+		
+		
+		
+		
+        <span id = "author">
+		<ul>
+		  <div class="stage" style="width: 120px; height: 120px;">
+            <div class="cubespinner">
+			
+			<!-- <div class="face1">Stars </div>
+                <div class="face2">can't</div>
+                <div class="face3">shine</div>
+                <div class="face4">without</div>
+                <div class="face5">darkness.</div>
+                <div class="face6">(don't_worry)</div>-->
+			
+               <div class="face1">#include_life.h> </div>
+                <div class="face2">//Algorithm of Success</div>
+                <div class="face3">while(noSuccess)</div>
+                <div class="face4">tryAgain()</div>
+                <div class="face5">if(Success)</div>
+                <div class="face6">improve()</div>
+				
+				
+				
+				
+            </div>
+        </div>
+		</ul>
+		<br/><br/><br/>
+		
+		<h4 style="text-align:center;color:red;">Md. Nazmul Hossain</h4>
+		
+		
+		</span>
+        
+        <script>
+        // geting canvas by id c
+        var c = document.getElementById("c");
+        var ctx = c.getContext("2d");
+
+        //making the canvas full screen
+        c.height = window.innerHeight;
+        c.width = window.innerWidth;
+
+        //chinese characters - taken from the unicode charset
+        var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+        //converting the string into an array of single characters
+        matrix = matrix.split("");
+
+        var font_size = 10;
+        var columns = c.width / font_size; //number of columns for the rainlll
+        //an array of drops - one per column
+        var drops = [];
+        //x below is the x coordinate
+        //1 = y co-ordinate of the drop(same for every drop initially)
+        for(var x = 0; x < columns; x++)
+            drops[x] = 1; 
+
+        //drawing the characters
+        function draw()
+        {
+            //Black BG for the canvas
+            //translucent BG to show trail
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, c.width, c.height);
+
+            ctx.fillStyle = "#0F0"; //green text
+            ctx.font = font_size + "px arial";
+            //looping over drops
+            for( var i = 0; i < drops.length; i++ )
+            {
+                //a random chinese character to print
+                var text = matrix[ Math.floor( Math.random() * matrix.length ) ];
+                //x = i*font_size, y = value of drops[i]*font_size
+                ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+                //sending the drop back to the top randomly after it has crossed the screen
+                //adding a randomness to the reset to make the drops scattered on the Y axis
+                if( drops[i] * font_size > c.height && Math.random() > 0.975 )
+                    drops[i] = 0;
+
+                //incrementing Y coordinate
+                drops[i]++;
+            }
+        }
+
+        setInterval( draw, 35 );
+
+        </script>
+    </body>
+</html>

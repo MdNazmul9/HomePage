@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flying Bird</title>
+<style>
+body{
+margin:0;
+padding:0;
+background:#3f3f3f;
+}
+
+#bg {
+  position: relative;
+  margin: 0em 0;
+  width: 1350px;
+  height: 630px;
+  box-shadow: inset 0 0 20px #fff;
+  background-image: url("https://cdn.allwallpaper.in/wallpapers/640x960/11755/beach-blue-sky-640x960-wallpaper.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  perspective: 200px;
+}
+
+#t {
+  position: absolute;
+  width: 50px;
+  height: 320px;
+  animation: travel 4.8s linear infinite alternate;
+}
+
+
+#bd {
+  width: 50px;
+  height: 50px;
+  background-image:url("https://s7.postimg.org/f73xmhq9n/unnamed.gif");
+  background-size:cover;
+  background-repeat:no-repeat ;
+  position: absolute;
+  animation: bounce 4.2s infinite alternate;
+}
+@keyframes travel {
+  from {
+    left: 0;
+    margin-left: 0;
+    transform: rotate(0) rotateY(0);
+  }
+  to {
+    left: 100%;
+    margin-left: -50px;
+    transform: rotateZ(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes bounce {
+  from {
+    bottom: 0;
+    margin-bottom: 0;
+    transform: rotate(0);
+  }
+  to {
+    bottom: 100%;
+    margin-bottom: -50px;
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+</head>
+<body>
+<div id="bg">
+<div id="t">
+<div id="bd">
+</div>
+</div>
+</div>
+</body>
+</html>
